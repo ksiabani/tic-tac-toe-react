@@ -2,10 +2,7 @@
 
 var gulp = require('gulp');
 var del = require('del');
-
-
 var path = require('path');
-
 
 // Load plugins
 var $ = require('gulp-load-plugins')();
@@ -20,6 +17,7 @@ var source = require('vinyl-source-stream'),
 
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var ghPages = require('gulp-gh-pages');
 
 // Styles
 gulp.task('styles', ['sass', 'moveCss']);
@@ -198,6 +196,12 @@ gulp.task('build', ['html', 'buildBundle', 'images', 'fonts', 'extras'], functio
         .pipe($.uglify())
         .pipe($.stripDebug())
         .pipe(gulp.dest('dist/scripts'));
+});
+
+// Deploy to GitHub Pages
+gulp.task('deploy', function() {
+    return gulp.src('./dist/**/*')
+        .pipe(ghPages());
 });
 
 // Default task
