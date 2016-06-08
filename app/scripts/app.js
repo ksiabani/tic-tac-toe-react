@@ -60,7 +60,7 @@ var TicTacToe = React.createClass({
             <div className="container">
                 <h2>Tic Tac Toe with React</h2>
                 <div className="ticTacToe">
-                    // "loop" around available tiles to draw them (9 in total)
+                    {/* "loop" around available tiles to draw them (9 in total) */}
                     { this.state.tiles.map(function (tile, position) {
                         return (
                             <Tile status={tile} key={position} position={position} turn={this.state.turn}
@@ -68,11 +68,12 @@ var TicTacToe = React.createClass({
                         );
                     }, this) }
                 </div>
-                // add status bar that will hold game state information:
-                // "Status text" let us know who's playing and who's won, if any
-                // Button "Start over" will let the user reset the game
-                // "moveNum" holds the number of current move, maybe used to show how many moves needed for a user to
-                win (not currently used)
+                {/*
+                    Add status bar that will hold game state information:
+                    * "Status text" let us know who's playing and who's won, if any
+                    * Button "Start over" will let the user reset the game
+                    * "moveNum" holds the number of current move, maybe used to show how many moves needed for a user to win (not currently used)
+                 */}
                 <StatusBar
                     statusText={ !this.state.statusText ? 'Player ' + (this.state.turn === 0 ? 'X' : 'O') + ' playing' : this.state.statusText}
                     startOver={this.startOver}
