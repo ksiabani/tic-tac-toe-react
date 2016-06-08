@@ -1,45 +1,86 @@
+'use strict';
 
 var React = window.React = require('react'),
     ReactDOM = require("react-dom"),
-    Timer = require("./ui/Timer"),
-    mountNode = document.getElementById("app");
+    mountNode = document.getElementById("app"),
+    winningCombos = ['001010100', '100010001', '010010010', '111000000', '000111000', '000000111', '001001001', '100100100'];
 
-var TodoList = React.createClass({
-  render: function() {
-    var createItem = function(itemText) {
-      return <li>{itemText}</li>;
-    };
-    return <ul>{this.props.items.map(createItem)}</ul>;
-  }
+
+var TicTacToe = React.createClass({
+
+    getInitialState: function () {
+        return {
+            players: [
+                {
+                    name: 'X',
+                    moves: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+                }, {
+                    name: 'O',
+                    moves: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+                }
+            ],
+            tiles: ['', '', '', '', '', '', '', '', ''],
+            turn: 0,
+            moveNum: 0,
+            winnerFound: false
+        };
+    },
+
+    render: function () {
+        return (
+            <div className="ticTacToe">
+                { this.state.tiles.map(function (tile, position) {
+                    return (
+                        <Tile status={tile} key={position} position={position} turn={this.state.turn}
+                              tileClick={this.tileClick}/>
+                    );
+                }, this) }
+            </div>
+        );
+    },
+
+    checkWin: function (player) {
+        var nMove = parseInt(this.state.players[player].moves.join('').split('').reverse().join(''), 2);
+        winningCombos.map(function(combo){
+            var nCombo = parseInt(combo, 2);
+            if ((nMove & nCombo) === nCombo) {
+                this.setState({winnerFound: player === 0 ? 'X' : 'O'});
+                console.log("Player " + (player === 0 ? 'X' : 'O') + ' wins!');
+            }
+        }, this);
+    },
+
+    tileClick: function (position, player) {
+        var tiles = this.state.tiles;
+        var players = this.state.players;
+        if (!tiles[position] && !this.state.winnerFound) {
+            tiles[position] = player === 0 ? 'X' : 'O';
+            players[player].moves[position] = 1;
+            this.setState({
+                players: players,
+                tiles: tiles,
+                turn: player === 0 ? 1 : 0,
+                checkWin: this.checkWin(player)
+            });
+        }
+    },
+
+    startOver: function() {
+        this.setState(this.getInitialState());
+    }
+
 });
-var TodoApp = React.createClass({
-  getInitialState: function() {
-    return {items: [], text: ''};
-  },
-  onChange: function(e) {
-    this.setState({text: e.target.value});
-  },
-  handleSubmit: function(e) {
-    e.preventDefault();
-    var nextItems = this.state.items.concat([this.state.text]);
-    var nextText = '';
-    this.setState({items: nextItems, text: nextText});
-  },
-  render: function() {
-    return (
-      <div>
-        <h3>TODO</h3>
-        <TodoList items={this.state.items} />
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.onChange} value={this.state.text} />
-          <button>{'Add #' + (this.state.items.length + 1)}</button>
-        </form>
-        <Timer />
-      </div>
-    );
-  }
+
+// Tile
+var Tile = React.createClass({
+    render: function () {
+        return (
+            <div className="square" onClick={this.clickHandler}>{this.props.status}</div>
+        );
+    },
+    clickHandler: function () {
+        this.props.tileClick(this.props.position, this.props.turn);
+    }
 });
 
-
-ReactDOM.render(<TodoApp />, mountNode);
-
+ReactDOM.render(<TicTacToe />, mountNode);
