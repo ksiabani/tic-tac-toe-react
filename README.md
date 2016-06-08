@@ -1,7 +1,7 @@
 # Tic Tac Toe with React
 
 
-> Tic Tac Toe made with facebook's React library. This project uses Randy Lien's Yeoman [generator](https://github.com/randylien/generator-react-gulp-browserify). Install and run your own copy using the instructions below or go directly to the [demo](http://ksiabani.github.io/tic-tac-toe-react).
+> Tic Tac Toe made with facebook's React library. This project uses Randy Lien's Yeoman [generator](https://github.com/randylien/generator-react-gulp-browserify). Install and run your own copy using the instructions below or go directly to the [demo](https://ksiabani.github.io/tic-tac-toe-react).
 
 
 ## Included
