@@ -16,11 +16,19 @@ html, body {
 }
 
 body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     vertical-align: center;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -ms-flex-line-pack: center;
     align-content: center;
     color: #e4e4e4;
     font-family: 'Montserrat', sans-serif;
@@ -28,8 +36,13 @@ body {
 }
 
 .ticTacToe {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     width: 400px;
     height: 400px;
@@ -53,7 +66,11 @@ body {
 }
 
 .status-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     padding: 15px 5px;
     color: #e4e4e4;
@@ -76,12 +93,8 @@ body {
     font-size: 1em;
     padding: .5em 1.5em;
     -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     background: #282828;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
     cursor: pointer;
     zoom: 1;
@@ -90,8 +103,6 @@ body {
 }
 .status-btn:hover {
     -webkit-transition: 0.2s ease;
-    -moz-transition: 0.2s ease;
-    -o-transition: 0.2s ease;
     transition: 0.2s ease;
     background-color: #e4e4e4;
     color: #222222;
