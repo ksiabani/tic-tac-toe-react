@@ -34,7 +34,11 @@
 * Run the gulp build task: `gulp build`. This, when done, will create a distribution folder `dist`.
 * Run the gulp default task: `gulp watch`. This will run a local server on [http://localhost:3000](http://localhost:8888) and will reload when code changes.
 
-
+## Resources
+* [React and Flux for Angular Developers](https://www.pluralsight.com/courses/react-flux-angular) by Tony Alicea
+* [Building Applications with React and Flux](https://www.pluralsight.com/courses/react-flux-building-applications) by Cory House
+* [Bitwise operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators) on MDN
+* [Using bit-logic to keep track of a tic-tac-toe game](https://codepen.io/labiej/post/using-bit-logic-to-keep-track-of-a-tic-tac-toe-game)
 
 ## License
 
