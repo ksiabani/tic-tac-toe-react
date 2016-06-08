@@ -1,6 +1,5 @@
-$icon-font-path: "../fonts/";
-
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+//$icon-font-path: "../fonts/";
+//@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 .browsehappy {
@@ -11,85 +10,85 @@ $icon-font-path: "../fonts/";
 }
 
 /* Space out content a bit */
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+//body {
+//    padding-top: 20px;
+//    padding-bottom: 20px;
+//}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
-}
+//.header,
+//.marketing,
+//.footer {
+//    padding-left: 15px;
+//    padding-right: 15px;
+//}
 
 /* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
-
-    /* Make the masthead heading the same height as the navigation */
-    h3 {
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 40px;
-        padding-bottom: 19px;
-    }
-}
+//.header {
+//    border-bottom: 1px solid #e5e5e5;
+//
+//    /* Make the masthead heading the same height as the navigation */
+//    h3 {
+//        margin-top: 0;
+//        margin-bottom: 0;
+//        line-height: 40px;
+//        padding-bottom: 19px;
+//    }
+//}
 
 /* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
+//.footer {
+//    padding-top: 19px;
+//    color: #777;
+//    border-top: 1px solid #e5e5e5;
+//}
 
-.container-narrow > hr {
-    margin: 30px 0;
-}
+//.container-narrow > hr {
+//    margin: 30px 0;
+//}
 
 /* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-    .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-    }
-}
+//.jumbotron {
+//    text-align: center;
+//    border-bottom: 1px solid #e5e5e5;
+//    .btn {
+//        font-size: 21px;
+//        padding: 14px 24px;
+//    }
+//}
 
 /* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
-    p + h4 {
-        margin-top: 28px;
-    }
-}
+//.marketing {
+//    margin: 40px 0;
+//    p + h4 {
+//        margin-top: 28px;
+//    }
+//}
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 730px;
-    }
-
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
-}
+//@media screen and (min-width: 768px) {
+//    .container {
+//        max-width: 730px;
+//    }
+//
+//    /* Remove the padding we set earlier */
+//    .header,
+//    .marketing,
+//    .footer {
+//        padding-left: 0;
+//        padding-right: 0;
+//    }
+//
+//    /* Space out the masthead */
+//    .header {
+//        margin-bottom: 30px;
+//    }
+//
+//    /* Remove the bottom border on the jumbotron for visual effect */
+//    .jumbotron {
+//        border-bottom: 0;
+//    }
+//}
 
 //Tic Tac Toe
 
@@ -108,8 +107,7 @@ body {
     vertical-align: center;
     flex-wrap: wrap;
     align-content: center;
-
-    //font-family     : 'Open Sans', sans-serif;
+    color: #e4e4e4;
     font-family: 'Montserrat', sans-serif;;
     background: linear-gradient(top, #222, #333);
     background: -webkit-linear-gradient(top, #222, #333);
@@ -118,8 +116,10 @@ body {
 .ticTacToe {
     display: flex;
     justify-content: space-between;
+    //display: flex;
+    //justify-content: space-between;
     flex-wrap: wrap;
-    color: #e4e4e4;;
+    //color: #e4e4e4;;
     width: 400px;
     height: 400px;
     padding: 5px;
@@ -140,3 +140,60 @@ body {
         padding: 20px;
     }
 }
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5px;
+    color: #e4e4e4;
+    line-height: 40px;
+}
+
+.status-btn {
+    //font-family: "Arial";
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #e4e4e4;
+    height: 20px;
+    line-height: 20px;
+    color: #e4e4e4;
+    -webkit-border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 5px;
+    -moz-background-clip: padding;
+    border-radius: 5px;
+    background-clip: padding-box;
+    font-size: 1em;
+    padding: .5em 1.5em;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    background: #282828;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    cursor: pointer;
+    zoom: 1;
+    -webkit-backface-visibility: hidden;
+    position: relative;
+}
+.status-btn:hover {
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    transition: 0.2s ease;
+    background-color: #e4e4e4;
+    color: #222222;
+}
+.status-btn:focus {
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+

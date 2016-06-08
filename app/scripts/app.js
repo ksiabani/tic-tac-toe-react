@@ -5,14 +5,16 @@ var React = window.React = require('react'),
     mountNode = document.getElementById("app"),
     winningCombos = ['001010100', '100010001', '010010010', '111000000', '000111000', '000000111', '001001001', '100100100'];
 
-var Footer = React.createClass({
+var StatusBar = React.createClass({
     render: function () {
         return (
-            //TODO: class status-bar
             <div className="status-bar">
-                <div>{this.props.statusText}
-                    <button className={this.props.moveNum > 0 ? "visible-xs pull-right" : "hidden-xs"} onClick={this.props.startOver}>Start Over</button>
+                <div className="status-text">{
+                    this.props.statusText}
                 </div>
+                <button className={this.props.moveNum > 0 ? "status-btn" : "hidden"}
+                        onClick={this.props.startOver}>Start Over
+                </button>
             </div>
         );
     }
@@ -42,7 +44,8 @@ var TicTacToe = React.createClass({
     render: function () {
         return (
             <div className="container">
-                <div className="ticTacToe blur">
+                <h2>Tic Tac Toe with React</h2>
+                <div className="ticTacToe">
                     { this.state.tiles.map(function (tile, position) {
                         return (
                             <Tile status={tile} key={position} position={position} turn={this.state.turn}
@@ -50,9 +53,10 @@ var TicTacToe = React.createClass({
                         );
                     }, this) }
                 </div>
-                <Footer statusText={ !this.state.statusText ? 'Player ' + (this.state.turn === 0 ? 'X' : 'O') + ' playing' : this.state.statusText}
-                        startOver={this.startOver}
-                        moveNum={this.state.moveNum}
+                <StatusBar
+                    statusText={ !this.state.statusText ? 'Player ' + (this.state.turn === 0 ? 'X' : 'O') + ' playing' : this.state.statusText}
+                    startOver={this.startOver}
+                    moveNum={this.state.moveNum}
                 />
             </div>
         );
