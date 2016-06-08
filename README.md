@@ -1,11 +1,10 @@
 # Tic Tac Toe with React
 
-<!--> [Yeoman](http://yeoman.io) generator for facebook's React library - Integrate with gulp and browserify.-->
-> Implementation of Tic Tac Toe game in facebook's React library (no AI included) using Randy Lien's [Yeoman](http://yeoman.io) [generator](https://github.com/randylien/generator-react-gulp-browserify)
 
-<!--https://github.com/randylien/generator-react-gulp-browserify-->
+> Tic Tac Toe made with facebook's React library. This project uses Randy Lien's Yeoman [generator](https://github.com/randylien/generator-react-gulp-browserify). Install and run your own copy using the instructions below or go directly to the [demo](http://ksiabani.github.io/tic-tac-toe-react).
 
-## What's inside?
+
+## Included
 
 * Gulp
 * Bower
@@ -13,7 +12,7 @@
 * Browserify
 * Reactify - Help to transform JSX
 * Watchify
-* livereload (BrowserSync)
+* Livereload (BrowserSync)
 * Sass with Compass
 * Bootstrap - Twitter Bootstrap's official Sass version
 * Modernizr
@@ -21,44 +20,21 @@
 
 ## Environment requirements
 
-* node.js 4.2.2
-* Sass >= 3.4 if you want to use Sass
+* Node.js >= 0.12
+* Sass >= 3.4 
 
 
-## How to install
-
-```
-$ npm install -g yo                                # Install Yeoman (if you don't have it yet)...
-$ npm install -g generator-react-gulp-browserify   # ...then install this generator...
-$ yo react-gulp-browserify                         # ...and run it.
-```
-
-If you chose to use sass, you'll need to install it with `gem install sass`.
-If you find your css build results are empty, update your sass gem.
-
-## Output folders 
-
-scripts - /scripts  
-styles - /styles  
-fonts - /fonts  
+## Installation
+1. Clone this repo.
+2. Install node.js dependencies: `npm install`.
+3. Install the bower dependencies: `bower install`.
 
 
-Now, when everything is ready, run the watch task and begin to develop your React components.
+## Automation with Gulp
+* Run the gulp build task: `gulp build`. This, when done, will create a distribution folder `dist`.
+* Run the gulp default task: `gulp watch`. This will run a local server on [http://localhost:3000](http://localhost:8888) and will reload when code changes.
 
-```
-$ gulp watch
-```
 
-How to run test?  
-Currently, I prefer to run test tasks from npm. Please run this command.
-```
-$ npm test
-```
-
-After development, you can run this task to generate production code.
-```
-$ gulp build
-```
 
 ## License
 
